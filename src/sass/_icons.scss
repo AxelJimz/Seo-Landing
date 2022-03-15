@@ -1,0 +1,26 @@
+// * CONFIGURATION OF ICONS
+// * ICON HEADER
+$icon-header : (
+    "used" : false,
+    "margin" : 0 1rem 0 0,
+    "size" : 0.75rem,
+    "color" : #1b1b1b,
+    "color-hover" : #1b1b1b99,
+);
+// * ICON SECTION
+$icon-section : (
+    "used" : false,
+    "margin" : none,
+    "size" : none,
+    "color" : none,
+    "color-hover" : none,
+);
+// * ICON FOOTER
+$icon-footer : (
+    "used" : true,
+    "margin" : 0 1rem 0 0,
+    "size" : 0.688rem,
+    "color" : #999999,
+    "color-hover" : #fff,
+);
+

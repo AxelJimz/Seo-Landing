@@ -1,0 +1,29 @@
+.navbar-link:active {
+  color: map-get($map: $navbar, $key: color-hover)
+}
+@include isBtnActive();
+@include isBtnSmallActive();
+@include isBtnMediumActive();
+@include isBtnBigActive();
+@include isIconHeaderActive();
+@include isIconSectionActive();
+@include isIconFooterActive();
+@include isInputHeaderActive();
+@include isInputSectionActive();
+@include isInputFooterActive();
+
+@media (hover: hover) {
+  .navbar-link:hover {
+    color: map-get($map: $navbar, $key: color-hover)
+  }
+  @include isBtnHover();
+  @include isBtnSmallHover();
+  @include isBtnMediumHover();
+  @include isBtnBigHover();
+  @include isIconHeaderHover();
+  @include isIconSectionHover();
+  @include isIconFooterHover();
+  @include isInputHeaderHover();
+  @include isInputSectionHover();
+  @include isInputFooterHover();
+}

@@ -1,0 +1,44 @@
+// * CONFIGURATION OF FLEX
+// * FLEX
+$flex : true, flex;
+$column : false, column;
+// * JUSTIFY CONTENT
+$justify-left : true, flex-start;
+$justify-center : true, center;
+$justify-right : true, flex-end;
+$justify-between : true, space-between;
+$justify-around : false, space-around;
+// * ALING ITEMS
+$aling-top : false, flex-start;
+$aling-center : true, center;
+$aling-bottom : false, flex-end;
+$aling-between : false, space-between;
+$aling-around : false, space-around;
+// * WRAP 
+$wrap : false, wrap;
+// * GROW
+$grow-1 : false, 1;
+$grow-2 : false, 2;
+$grow-3 : false, 3;
+// * ALING CONTENT
+$content-center-left : (
+    "used" : false,
+    "display" : flex,
+    "aling" : center,
+);
+$content-center : (
+    "used" : true,
+    "display" : flex,
+    "justify" : center,
+    "aling" : center,
+);
+$content-center-right : (
+    "used" : false,
+    "display" : flex,
+    "justify" : flex-end,
+    "aling" : flex-end,
+);
+
+
+
+

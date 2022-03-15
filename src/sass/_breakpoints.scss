@@ -1,0 +1,151 @@
+// * CONFIGURATION
+// State of Breakpoints
+$breakpoints: (
+  "sm": 36rem,
+  "md": 48rem,
+  "lg": 62rem,
+  "xl": 80rem,
+  "xxl": 87.5rem,
+);
+
+/* BREAKPOINTS */
+
+@media screen and (min-width: map-get($breakpoints, sm)) {
+  /* CONTAINERS */
+  .header,
+  .nav,
+  .section,
+  .footer {
+    padding: 0;
+  }
+
+  .container {
+    width: map-get($map: $width-container, $key: sm);
+  }
+}
+
+@media screen and (min-width: map-get($breakpoints, md)) {
+  /* CONTAINER */
+  .container {
+    width: map-get($map: $width-container, $key: md);
+  }
+
+  /* GRID */
+  .columns-2,
+  .columns-3,
+  .columns-4,
+  .columns-5,
+  .columns-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .md-span-2 {
+    grid-column: span 2;
+  }
+
+  .md-flex {
+    display: flex;
+  }
+
+  .md-justify-right {
+    justify-content: flex-end;
+  }
+
+  .md-text-left {
+    text-align: left;
+  }
+
+  .md-text-center {
+    text-align: center;
+  }
+
+  .md-text-right {
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: map-get($breakpoints, lg)) {
+  /* NAVBAR */
+  .navbar-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar-ul {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-link {
+    margin: 0 1rem 0 0;
+  }
+  /* CONTAINER */
+  .container {
+    width: map-get($map: $width-container, $key: lg);
+  }
+
+  /* GRID */
+  .columns-3,
+  .columns-5,
+  .columns-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .lg-span-1 {
+    grid-column: span 1;
+  }
+
+  .lg-span-2 {
+    grid-column: span 2;
+  }
+
+  .lg-text-left {
+    text-align: left;
+  }
+
+  .lg-text-center {
+    text-align: center;
+  }
+
+  .lg-text-right {
+    text-align: right;
+  }
+  .lg-d-none {
+    display: none;
+  }
+  .lg-d-block {
+    display: block;
+  }
+}
+
+@media screen and (min-width: map-get($breakpoints, xl)) {
+  /* CONTAINER */
+  .container {
+    width: map-get($map: $width-container, $key: xl);
+  }
+}
+
+@media screen and (min-width: map-get($breakpoints, xxl)) {
+  /* CONTAINER */
+  .container {
+    width: map-get($map: $width-container, $key: xxl);
+  }
+
+  /* GRID */
+  .columns-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .columns-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+/* 
+@media screen and (min-height: 1024px) {
+  .header {
+    height: ;
+  }
+}
+ */

@@ -1,0 +1,1175 @@
+/* NAVBAR CLASS */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-ul {
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.navbar-ul-visible {
+  display: block;
+}
+
+.navbar-link {
+  padding: 1rem 0;
+  font-size: map-get($map: $navbar, $key: size);
+  font-weight: map-get($map: $navbar, $key: weight);
+  color: map-get($map: $navbar, $key: color);
+}
+
+.navbar-brand {
+  cursor: pointer;
+}
+
+// *  FLEXBOX
+
+// * MIXINS FLEX
+@mixin isFlex($used: nth($list: $flex, $n: 1)) {
+  @if ($used == true) {
+    .flex {
+      display: nth($list: $flex, $n: 2);
+    }
+  }
+}
+@mixin isFlexColumn($used: nth($list: $column, $n: 1)) {
+  @if ($used == true) {
+    .col {
+      flex-direction: nth($list: $column, $n: 2);
+    }
+  }
+}
+@mixin isJustifyLeft($used: nth($list: $justify-left, $n: 1)) {
+  @if ($used == true) {
+    .justify-left {
+      justify-content: nth($list: $justify-left, $n: 2);
+    }
+  }
+}
+@mixin isJustifyCenter($used: nth($list: $justify-center, $n: 1)) {
+  @if ($used == true) {
+    .justify-center {
+      justify-content: nth($list: $justify-center, $n: 2);
+    }
+  }
+}
+@mixin isJustifyRight($used: nth($list: $justify-right, $n: 1)) {
+  @if ($used == true) {
+    .justify-right {
+      justify-content: nth($list: $justify-right, $n: 2);
+    }
+  }
+}
+@mixin isJustifyBetween($used: nth($list: $justify-between, $n: 1)) {
+  @if ($used == true) {
+    .justify-between {
+      justify-content: nth($list: $justify-between, $n: 2);
+    }
+  }
+}
+@mixin isJustifyAround($used: nth($list: $justify-around, $n: 1)) {
+  @if ($used == true) {
+    .justify-around {
+      justify-content: nth($list: $justify-around, $n: 2);
+    }
+  }
+}
+@mixin isAlingTop($used: nth($list: $aling-top, $n: 1)) {
+  @if ($used == true) {
+    .aling-top {
+      align-items: nth($list: $aling-top, $n: 2);
+    }
+  }
+}
+@mixin isAlingCenter($used: nth($list: $aling-center, $n: 1)) {
+  @if ($used == true) {
+    .aling-center {
+      align-items: nth($list: $aling-center, $n: 2);
+    }
+  }
+}
+@mixin isAlingBottom($used: nth($list: $aling-bottom, $n: 1)) {
+  @if ($used == true) {
+    .aling-bottom {
+      align-items: nth($list: $aling-bottom, $n: 2);
+    }
+  }
+}
+@mixin isAlingBetween($used: nth($list: $aling-between, $n: 1)) {
+  @if ($used == true) {
+    .aling-between {
+      align-items: nth($list: $aling-between, $n: 2);
+    }
+  }
+}
+@mixin isAlingAround($used: nth($list: $aling-around, $n: 1)) {
+  @if ($used == true) {
+    .aling-around {
+      align-items: nth($list: $aling-around, $n: 2);
+    }
+  }
+}
+@mixin isWrap($used: nth($list: $wrap, $n: 1)) {
+  @if ($used == true) {
+    .wrap {
+      flex-wrap: nth($list: $wrap, $n: 2);
+    }
+  }
+}
+@mixin isGrow-1($used: nth($list: $grow-1, $n: 1)) {
+  @if ($used == true) {
+    .grow-1 {
+      flex-grow: nth($list: $grow-1, $n: 2);
+    }
+  }
+}
+@mixin isGrow-2($used: nth($list: $grow-2, $n: 1)) {
+  @if ($used == true) {
+    .grow-2 {
+      flex-grow: nth($list: $grow-2, $n: 2);
+    }
+  }
+}
+@mixin isGrow-3($used: nth($list: $grow-3, $n: 1)) {
+  @if ($used == true) {
+    .grow-3 {
+      flex-grow: nth($list: $grow-3, $n: 2);
+    }
+  }
+}
+@mixin isContentCenterLeft(
+  $used: map-get($map: $content-center-left, $key: used)
+) {
+  @if ($used == true) {
+    .content-center-left {
+      display: map-get($map: $content-center-left, $key: display);
+      align-items: map-get($map: $content-center-left, $key: aling);
+    }
+  }
+}
+@mixin isContentCenter($used: map-get($map: $content-center, $key: used)) {
+  @if ($used == true) {
+    .content-center {
+      display: map-get($map: $content-center, $key: display);
+      justify-content: map-get($map: $content-center, $key: justify);
+      align-items: map-get($map: $content-center, $key: aling);
+    }
+  }
+}
+@mixin isContentCenterRight(
+  $used: map-get($map: $content-center-right, $key: used)
+) {
+  @if ($used == true) {
+    .content-center-right {
+      display: map-get($map: $content-center-right, $key: display);
+      justify-content: map-get($map: $content-center-right, $key: justify);
+      align-items: map-get($map: $content-center-right, $key: aling);
+    }
+  }
+}
+
+/* FLEXBOX CLASS */
+
+@include isFlex();
+@include isFlexColumn();
+@include isJustifyLeft();
+@include isJustifyCenter();
+@include isJustifyRight();
+@include isJustifyBetween();
+@include isJustifyAround();
+@include isAlingTop();
+@include isAlingCenter();
+@include isAlingBottom();
+@include isAlingBetween();
+@include isAlingAround();
+@include isWrap();
+@include isGrow-1();
+@include isGrow-2();
+@include isGrow-3();
+@include isContentCenterLeft();
+@include isContentCenter();
+@include isContentCenterRight();
+
+// * TYPOGRAPHY
+
+// * MIXIN HEADINGS
+@mixin isHeading-1($used: map-get($map: $heading-1, $key: used)) {
+  @if ($used == true) {
+    .heading-1 {
+      @if (map-get($map: $heading-1, $key: margin) != none) {
+        margin: map-get($map: $heading-1, $key: margin);
+      }
+      @if (map-get($map: $heading-1, $key: family) != none) {
+        font-family: map-get($map: $heading-1, $key: family);
+      }
+      @if (map-get($map: $heading-1, $key: size) != none) {
+        font-size: map-get($map: $heading-1, $key: size);
+      }
+      @if (map-get($map: $heading-1, $key: weight) != none) {
+        font-weight: map-get($map: $heading-1, $key: weight);
+      }
+      @if (map-get($map: $heading-1, $key: spacing) != none) {
+        letter-spacing: map-get($map: $heading-1, $key: spacing);
+      }
+      @if (map-get($map: $heading-1, $key: leading) != none) {
+        line-height: map-get($map: $heading-1, $key: leading);
+      }
+      @if (map-get($map: $heading-1, $key: color) != none) {
+        color: map-get($map: $heading-1, $key: color);
+      }
+    }
+  }
+}
+@mixin isHeading-2($used: map-get($map: $heading-2, $key: used)) {
+  @if ($used == true) {
+    .heading-2 {
+      @if (map-get($map: $heading-2, $key: margin) != none) {
+        margin: map-get($map: $heading-2, $key: margin);
+      }
+      @if (map-get($map: $heading-2, $key: family) != none) {
+        font-family: map-get($map: $heading-2, $key: family);
+      }
+      @if (map-get($map: $heading-2, $key: size) != none) {
+        font-size: map-get($map: $heading-2, $key: size);
+      }
+      @if (map-get($map: $heading-2, $key: weight) != none) {
+        font-weight: map-get($map: $heading-2, $key: weight);
+      }
+      @if (map-get($map: $heading-2, $key: spacing) != none) {
+        letter-spacing: map-get($map: $heading-2, $key: spacing);
+      }
+      @if (map-get($map: $heading-2, $key: leading) != none) {
+        line-height: map-get($map: $heading-2, $key: leading);
+      }
+      @if (map-get($map: $heading-2, $key: color) != none) {
+        color: map-get($map: $heading-2, $key: color);
+      }
+    }
+  }
+}
+@mixin isHeading-3($used: map-get($map: $heading-3, $key: used)) {
+  @if ($used == true) {
+    .heading-3 {
+      @if (map-get($map: $heading-3, $key: margin) != none) {
+        margin: map-get($map: $heading-3, $key: margin);
+      }
+      @if (map-get($map: $heading-3, $key: family) != none) {
+        font-family: map-get($map: $heading-3, $key: family);
+      }
+      @if (map-get($map: $heading-3, $key: size) != none) {
+        font-size: map-get($map: $heading-3, $key: size);
+      }
+      @if (map-get($map: $heading-3, $key: weight) != none) {
+        font-weight: map-get($map: $heading-3, $key: weight);
+      }
+      @if (map-get($map: $heading-3, $key: spacing) != none) {
+        letter-spacing: map-get($map: $heading-3, $key: spacing);
+      }
+      @if (map-get($map: $heading-3, $key: leading) != none) {
+        line-height: map-get($map: $heading-3, $key: leading);
+      }
+      @if (map-get($map: $heading-3, $key: color) != none) {
+        color: map-get($map: $heading-3, $key: color);
+      }
+    }
+  }
+}
+@mixin isHeading-4($used: map-get($map: $heading-4, $key: used)) {
+  @if ($used == true) {
+    .heading-4 {
+      @if (map-get($map: $heading-4, $key: margin) != none) {
+        margin: map-get($map: $heading-4, $key: margin);
+      }
+      @if (map-get($map: $heading-4, $key: family) != none) {
+        font-family: map-get($map: $heading-4, $key: family);
+      }
+      @if (map-get($map: $heading-4, $key: size) != none) {
+        font-size: map-get($map: $heading-4, $key: size);
+      }
+      @if (map-get($map: $heading-4, $key: weight) != none) {
+        font-weight: map-get($map: $heading-4, $key: weight);
+      }
+      @if (map-get($map: $heading-4, $key: spacing) != none) {
+        letter-spacing: map-get($map: $heading-4, $key: spacing);
+      }
+      @if (map-get($map: $heading-4, $key: leading) != none) {
+        line-height: map-get($map: $heading-4, $key: leading);
+      }
+      @if (map-get($map: $heading-4, $key: color) != none) {
+        color: map-get($map: $heading-4, $key: color);
+      }
+    }
+  }
+}
+@mixin isHeading-5($used: map-get($map: $heading-5, $key: used)) {
+  @if ($used == true) {
+    .heading-5 {
+      @if (map-get($map: $heading-5, $key: margin) != none) {
+        margin: map-get($map: $heading-5, $key: margin);
+      }
+      @if (map-get($map: $heading-5, $key: family) != none) {
+        font-family: map-get($map: $heading-5, $key: family);
+      }
+      @if (map-get($map: $heading-5, $key: size) != none) {
+        font-size: map-get($map: $heading-5, $key: size);
+      }
+      @if (map-get($map: $heading-5, $key: weight) != none) {
+        font-weight: map-get($map: $heading-5, $key: weight);
+      }
+      @if (map-get($map: $heading-5, $key: spacing) != none) {
+        letter-spacing: map-get($map: $heading-5, $key: spacing);
+      }
+      @if (map-get($map: $heading-5, $key: leading) != none) {
+        line-height: map-get($map: $heading-5, $key: leading);
+      }
+      @if (map-get($map: $heading-5, $key: color) != none) {
+        color: map-get($map: $heading-5, $key: color);
+      }
+    }
+  }
+}
+@mixin isHeading-6($used: map-get($map: $heading-6, $key: used)) {
+  @if ($used == true) {
+    .heading-6 {
+      @if (map-get($map: $heading-6, $key: margin) != none) {
+        margin: map-get($map: $heading-6, $key: margin);
+      }
+      @if (map-get($map: $heading-6, $key: family) != none) {
+        font-family: map-get($map: $heading-6, $key: family);
+      }
+      @if (map-get($map: $heading-6, $key: size) != none) {
+        font-size: map-get($map: $heading-6, $key: size);
+      }
+      @if (map-get($map: $heading-6, $key: weight) != none) {
+        font-weight: map-get($map: $heading-6, $key: weight);
+      }
+      @if (map-get($map: $heading-6, $key: spacing) != none) {
+        letter-spacing: map-get($map: $heading-6, $key: spacing);
+      }
+      @if (map-get($map: $heading-6, $key: leading) != none) {
+        line-height: map-get($map: $heading-6, $key: leading);
+      }
+      @if (map-get($map: $heading-6, $key: color) != none) {
+        color: map-get($map: $heading-6, $key: color);
+      }
+    }
+  }
+}
+// * MIXIN PARAGRAPHS
+@mixin isParagraph-1($used: map-get($map: $paragraph-1, $key: used)) {
+  @if ($used == true) {
+    .paragraph-1 {
+      @if (map-get($map: $paragraph-1, $key: margin) != none) {
+        margin: map-get($map: $heading-1, $key: margin);
+      }
+      @if (map-get($map: $paragraph-1, $key: family) != none) {
+        font-family: map-get($map: $paragraph-1, $key: family);
+      }
+      @if (map-get($map: $paragraph-1, $key: size) != none) {
+        font-size: map-get($map: $paragraph-1, $key: size);
+      }
+      @if (map-get($map: $paragraph-1, $key: weight) != none) {
+        font-weight: map-get($map: $paragraph-1, $key: weight);
+      }
+      @if (map-get($map: $paragraph-1, $key: spacing) != none) {
+        letter-spacing: map-get($map: $paragraph-1, $key: spacing);
+      }
+      @if (map-get($map: $paragraph-1, $key: leading) != none) {
+        line-height: map-get($map: $paragraph-1, $key: leading);
+      }
+      @if (map-get($map: $paragraph-1, $key: color) != none) {
+        color: map-get($map: $paragraph-1, $key: color);
+      }
+    }
+  }
+}
+@mixin isParagraph-2($used: map-get($map: $paragraph-2, $key: used)) {
+  @if ($used == true) {
+    .paragraph-2 {
+      @if (map-get($map: $paragraph-2, $key: margin) != none) {
+        margin: map-get($map: $heading-2, $key: margin);
+      }
+      @if (map-get($map: $paragraph-2, $key: family) != none) {
+        font-family: map-get($map: $paragraph-2, $key: family);
+      }
+      @if (map-get($map: $paragraph-2, $key: size) != none) {
+        font-size: map-get($map: $paragraph-2, $key: size);
+      }
+      @if (map-get($map: $paragraph-2, $key: weight) != none) {
+        font-weight: map-get($map: $paragraph-2, $key: weight);
+      }
+      @if (map-get($map: $paragraph-2, $key: spacing) != none) {
+        letter-spacing: map-get($map: $paragraph-2, $key: spacing);
+      }
+      @if (map-get($map: $paragraph-2, $key: leading) != none) {
+        line-height: map-get($map: $paragraph-2, $key: leading);
+      }
+      @if (map-get($map: $paragraph-2, $key: color) != none) {
+        color: map-get($map: $paragraph-2, $key: color);
+      }
+    }
+  }
+}
+@mixin isParagraph-3($used: map-get($map: $paragraph-3, $key: used)) {
+  @if ($used == true) {
+    .paragraph-3 {
+      @if (map-get($map: $paragraph-3, $key: margin) != none) {
+        margin: map-get($map: $heading-3, $key: margin);
+      }
+      @if (map-get($map: $paragraph-3, $key: family) != none) {
+        font-family: map-get($map: $paragraph-3, $key: family);
+      }
+      @if (map-get($map: $paragraph-3, $key: size) != none) {
+        font-size: map-get($map: $paragraph-3, $key: size);
+      }
+      @if (map-get($map: $paragraph-3, $key: weight) != none) {
+        font-weight: map-get($map: $paragraph-3, $key: weight);
+      }
+      @if (map-get($map: $paragraph-3, $key: spacing) != none) {
+        letter-spacing: map-get($map: $paragraph-3, $key: spacing);
+      }
+      @if (map-get($map: $paragraph-3, $key: leading) != none) {
+        line-height: map-get($map: $paragraph-3, $key: leading);
+      }
+      @if (map-get($map: $paragraph-3, $key: color) != none) {
+        color: map-get($map: $paragraph-3, $key: color);
+      }
+    }
+  }
+}
+@mixin isParagraph-4($used: map-get($map: $paragraph-4, $key: used)) {
+  @if ($used == true) {
+    .paragraph-4 {
+      @if (map-get($map: $paragraph-4, $key: margin) != none) {
+        margin: map-get($map: $heading-4, $key: margin);
+      }
+      @if (map-get($map: $paragraph-4, $key: family) != none) {
+        font-family: map-get($map: $paragraph-4, $key: family);
+      }
+      @if (map-get($map: $paragraph-4, $key: size) != none) {
+        font-size: map-get($map: $paragraph-4, $key: size);
+      }
+      @if (map-get($map: $paragraph-4, $key: weight) != none) {
+        font-weight: map-get($map: $paragraph-4, $key: weight);
+      }
+      @if (map-get($map: $paragraph-4, $key: spacing) != none) {
+        letter-spacing: map-get($map: $paragraph-4, $key: spacing);
+      }
+      @if (map-get($map: $paragraph-4, $key: leading) != none) {
+        line-height: map-get($map: $paragraph-4, $key: leading);
+      }
+      @if (map-get($map: $paragraph-4, $key: color) != none) {
+        color: map-get($map: $paragraph-4, $key: color);
+      }
+    }
+  }
+}
+@mixin isParagraph-5($used: map-get($map: $paragraph-5, $key: used)) {
+  @if ($used == true) {
+    .paragraph-5 {
+      @if (map-get($map: $paragraph-5, $key: margin) != none) {
+        margin: map-get($map: $heading-5, $key: margin);
+      }
+      @if (map-get($map: $paragraph-5, $key: family) != none) {
+        font-family: map-get($map: $paragraph-5, $key: family);
+      }
+      @if (map-get($map: $paragraph-5, $key: size) != none) {
+        font-size: map-get($map: $paragraph-5, $key: size);
+      }
+      @if (map-get($map: $paragraph-5, $key: weight) != none) {
+        font-weight: map-get($map: $paragraph-5, $key: weight);
+      }
+      @if (map-get($map: $paragraph-5, $key: spacing) != none) {
+        letter-spacing: map-get($map: $paragraph-5, $key: spacing);
+      }
+      @if (map-get($map: $paragraph-5, $key: leading) != none) {
+        line-height: map-get($map: $paragraph-5, $key: leading);
+      }
+      @if (map-get($map: $paragraph-5, $key: color) != none) {
+        color: map-get($map: $paragraph-5, $key: color);
+      }
+    }
+  }
+}
+@mixin isParagraph-6($used: map-get($map: $paragraph-6, $key: used)) {
+  @if ($used == true) {
+    .paragraph-6 {
+      @if (map-get($map: $paragraph-6, $key: margin) != none) {
+        margin: map-get($map: $heading-6, $key: margin);
+      }
+      @if (map-get($map: $paragraph-6, $key: family) != none) {
+        font-family: map-get($map: $paragraph-6, $key: family);
+      }
+      @if (map-get($map: $paragraph-6, $key: size) != none) {
+        font-size: map-get($map: $paragraph-6, $key: size);
+      }
+      @if (map-get($map: $paragraph-6, $key: weight) != none) {
+        font-weight: map-get($map: $paragraph-6, $key: weight);
+      }
+      @if (map-get($map: $paragraph-6, $key: spacing) != none) {
+        letter-spacing: map-get($map: $paragraph-6, $key: spacing);
+      }
+      @if (map-get($map: $paragraph-6, $key: leading) != none) {
+        line-height: map-get($map: $paragraph-6, $key: leading);
+      }
+      @if (map-get($map: $paragraph-6, $key: color) != none) {
+        color: map-get($map: $paragraph-6, $key: color);
+      }
+    }
+  }
+}
+
+/* HEADINGS CLASS */
+
+@include isHeading-1();
+@include isHeading-2();
+@include isHeading-3();
+@include isHeading-4();
+@include isHeading-5();
+@include isHeading-6();
+
+/* PARAGRAPHS CLASS */
+
+@include isParagraph-1();
+@include isParagraph-2();
+@include isParagraph-3();
+@include isParagraph-4();
+@include isParagraph-5();
+@include isParagraph-6();
+
+/* TEXT ALING */
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* WEIGHT */
+.light {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 500;
+}
+.bold {
+  font-weight: 700;
+}
+.extrabold {
+  font-weight: 900;
+}
+
+// * BUTTONS
+
+// * MIXIN BUTTON
+@mixin isBtn {
+  .btn {
+    @if (map-get($map: $btn, $key: size) != none) {
+      font-size: map-get($map: $btn, $key: size);
+    }
+    @if (map-get($map: $btn, $key: weight) != none) {
+      font-weight: map-get($map: $btn, $key: weight);
+    }
+    @if (map-get($map: $btn, $key: color) != none) {
+      color: map-get($map: $btn, $key: color);
+    }
+  }
+}
+@mixin isBtnSmall($used: map-get($map: $btn-small, $key: used)) {
+  @if ($used == true) {
+    $rounded: map-get(
+      $map: $btn-small,
+      $key: rounded,
+    );
+    .btn-small {
+      @if (map-get($map: $btn-small, $key: padding) != none) {
+        padding: map-get($map: $btn-small, $key: padding);
+      }
+      @if (map-get($map: $btn-small, $key: margin) != none) {
+        margin: map-get($map: $btn-small, $key: margin);
+      }
+      @if (map-get($map: $btn-small, $key: size) != none) {
+        font-size: map-get($map: $btn-small, $key: size);
+      }
+      @if (map-get($map: $btn-small, $key: weight) != none) {
+        font-weight: map-get($map: $btn-small, $key: weight);
+      }
+      @if (map-get($map: $btn-small, $key: color) != none) {
+        color: map-get($map: $btn-small, $key: color);
+      }
+      @if (map-get($map: $btn-small, $key: bg) != none) {
+        background-color: map-get($map: $btn-small, $key: bg);
+        border: 0.063rem solid map-get($map: $btn-small, $key: bg);
+      }
+      @if (map-get($map: $btn-small, $key: rounded) != none) {
+        border-radius: $rounded;
+        -webkit-border-radius: $rounded;
+        -moz-border-radius: $rounded;
+        -ms-border-radius: $rounded;
+        -o-border-radius: $rounded;
+      }
+    }
+  }
+}
+@mixin isBtnMedium($used: map-get($map: $btn-medium, $key: used)) {
+  @if ($used == true) {
+    $rounded: map-get(
+      $map: $btn-medium,
+      $key: rounded,
+    );
+    .btn-medium {
+      @if (map-get($map: $btn-medium, $key: padding) != none) {
+        padding: map-get($map: $btn-medium, $key: padding);
+      }
+      @if (map-get($map: $btn-medium, $key: margin) != none) {
+        margin: map-get($map: $btn-medium, $key: margin);
+      }
+      @if (map-get($map: $btn-medium, $key: size) != none) {
+        font-size: map-get($map: $btn-medium, $key: size);
+      }
+      @if (map-get($map: $btn-medium, $key: weight) != none) {
+        font-weight: map-get($map: $btn-medium, $key: weight);
+      }
+      @if (map-get($map: $btn-medium, $key: color) != none) {
+        color: map-get($map: $btn-medium, $key: color);
+      }
+      @if (map-get($map: $btn-medium, $key: bg) != none) {
+        background-color: map-get($map: $btn-medium, $key: bg);
+        border: 0.063rem solid map-get($map: $btn-medium, $key: bg);
+      }
+      @if (map-get($map: $btn-medium, $key: rounded) != none) {
+        border-radius: $rounded;
+        -webkit-border-radius: $rounded;
+        -moz-border-radius: $rounded;
+        -ms-border-radius: $rounded;
+        -o-border-radius: $rounded;
+      }
+    }
+  }
+}
+@mixin isBtnBig($used: map-get($map: $btn-big, $key: used)) {
+  @if ($used == true) {
+    $rounded: map-get(
+      $map: $btn-big,
+      $key: rounded,
+    );
+    .btn-big {
+      @if (map-get($map: $btn-big, $key: padding) != none) {
+        padding: map-get($map: $btn-big, $key: padding);
+      }
+      @if (map-get($map: $btn-big, $key: margin) != none) {
+        margin: map-get($map: $btn-big, $key: margin);
+      }
+      @if (map-get($map: $btn-big, $key: size) != none) {
+        font-size: map-get($map: $btn-big, $key: size);
+      }
+      @if (map-get($map: $btn-big, $key: weight) != none) {
+        font-weight: map-get($map: $btn-big, $key: weight);
+      }
+      @if (map-get($map: $btn-big, $key: color) != none) {
+        color: map-get($map: $btn-big, $key: color);
+      }
+      @if (map-get($map: $btn-big, $key: bg) != none) {
+        background-color: map-get($map: $btn-big, $key: bg);
+        border: 0.063rem solid map-get($map: $btn-big, $key: bg);
+      }
+      @if (map-get($map: $btn-big, $key: rounded) != none) {
+        border-radius: $rounded;
+        -webkit-border-radius: $rounded;
+        -moz-border-radius: $rounded;
+        -ms-border-radius: $rounded;
+        -o-border-radius: $rounded;
+      }
+    }
+  }
+}
+
+// * MIXIN BUTTONS ACTIVE AND HOVER
+
+@mixin isBtnActive {
+  @if (map-get($map: $btn, $key: color-hover) != none) {
+    .btn:active {
+      color: map-get($map: $btn, $key: color-hover);
+    }
+  }
+}
+@mixin isBtnHover {
+  @if (map-get($map: $btn, $key: color-hover) != none) {
+    .btn:hover {
+      color: map-get($map: $btn, $key: color-hover);
+    }
+  }
+}
+@mixin isBtnSmallActive {
+  @if (map-get($map: $btn-small, $key: color-hover) != none) {
+    .btn-small:active {
+      color: map-get($map: $btn-small, $key: color-hover);
+      background-color: map-get($map: $btn-small, $key: bg-hover);
+      border: 0.063rem solid map-get($map: $btn-small, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtnSmallHover {
+  @if (map-get($map: $btn-small, $key: color-hover) != none) {
+    .btn-small:hover {
+      color: map-get($map: $btn-small, $key: color-hover);
+      background-color: map-get($map: $btn-small, $key: bg-hover);
+      border: 0.063rem solid map-get($map: $btn-small, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtnMediumActive {
+  @if (map-get($map: $btn-medium, $key: color-hover) != none) {
+    .btn-medium:active {
+      color: map-get($map: $btn-medium, $key: color-hover);
+      background-color: map-get($map: $btn-medium, $key: bg-hover);
+      border: 0.063rem solid map-get($map: $btn-medium, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtnMediumHover {
+  @if (map-get($map: $btn-medium, $key: color-hover) != none) {
+    .btn-medium:hover {
+      color: map-get($map: $btn-medium, $key: color-hover);
+      background-color: map-get($map: $btn-medium, $key: bg-hover);
+      border: 0.063rem solid map-get($map: $btn-medium, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtnBigActive {
+  @if (map-get($map: $btn-big, $key: color-hover) != none) {
+    .btn-big:active {
+      color: map-get($map: $btn-big, $key: color-hover);
+      background-color: map-get($map: $btn-big, $key: bg-hover);
+      border: 0.063rem solid map-get($map: $btn-big, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtnBigHover {
+  @if (map-get($map: $btn-big, $key: color-hover) != none) {
+    .btn-big:hover {
+      color: map-get($map: $btn-big, $key: color-hover);
+      background-color: map-get($map: $btn-big, $key: bg-hover);
+      border: 0.063rem solid map-get($map: $btn-big, $key: bg-hover);
+    }
+  }
+}
+
+/* BUTTONS CLASS */
+@include isBtn();
+@include isBtnSmall();
+@include isBtnMedium();
+@include isBtnBig();
+
+// * INPUTS
+
+// * MIXIN INPUTS
+
+@mixin isInputHeader($used : map-get($map: $input-header, $key: used)) {
+  @if ($used == true) {
+      .input-header {
+          @if (map-get($map: $input-header, $key: width) != none) {
+              width: map-get($map: $input-header, $key: width);
+          }
+          @if (map-get($map: $input-header, $key: padding) != none) {
+              padding: map-get($map: $input-header, $key: padding);
+          }
+          @if (map-get($map: $input-header, $key: size) != none) {
+              font-size: map-get($map: $input-header, $key: size);
+          }
+          @if (map-get($map: $input-header, $key: color) != none) {
+              color: map-get($map: $input-header, $key: color);
+          }
+          @if (map-get($map: $input-header, $key: bg) != none) {
+              background-color: map-get($map: $input-header, $key: bg);
+          }
+          @if (map-get($map: $input-header, $key: border-color) != none) {
+              border: 0.063rem solid map-get($map: $input-header, $key: border-color);
+          }
+      }
+  }
+}
+@mixin isInputSection($used : map-get($map: $input-section, $key: used)) {
+  @if ($used == true) {
+      .input-section {
+          @if (map-get($map: $input-section, $key: width) != none) {
+              width: map-get($map: $input-section, $key: width);
+          }
+          @if (map-get($map: $input-section, $key: padding) != none) {
+              padding: map-get($map: $input-section, $key: padding);
+          }
+          @if (map-get($map: $input-section, $key: size) != none) {
+              font-size: map-get($map: $input-section, $key: size);
+          }
+          @if (map-get($map: $input-section, $key: color) != none) {
+              color: map-get($map: $input-section, $key: color);
+          }
+          @if (map-get($map: $input-section, $key: bg) != none) {
+              background-color: map-get($map: $input-section, $key: bg);
+          }
+          @if (map-get($map: $input-section, $key: border-color) != none) {
+              border: 0.063rem solid map-get($map: $input-section, $key: border-color);
+          }
+      }
+  }
+}
+@mixin isInputFooter($used : map-get($map: $input-footer, $key: used)) {
+  @if ($used == true) {
+      .input-footer {
+          @if (map-get($map: $input-footer, $key: width) != none) {
+              width: map-get($map: $input-footer, $key: width);
+          }
+          @if (map-get($map: $input-footer, $key: padding) != none) {
+              padding: map-get($map: $input-footer, $key: padding);
+          }
+          @if (map-get($map: $input-footer, $key: size) != none) {
+              font-size: map-get($map: $input-footer, $key: size);
+          }
+          @if (map-get($map: $input-footer, $key: color) != none) {
+              color: map-get($map: $input-footer, $key: color);
+          }
+          @if (map-get($map: $input-footer, $key: bg) != none) {
+              background-color: map-get($map: $input-footer, $key: bg);
+          }
+          @if (map-get($map: $input-footer, $key: border-color) != none) {
+              border: 0.063rem solid map-get($map: $input-footer, $key: border-color);
+          }
+      }
+  }
+}
+
+// * MIXINS INPUTS ACTIVE AND HOVER
+
+@mixin isInputHeaderActive {
+  @if (map-get($map: $input-header, $key: border-hover)) {
+      .input-header:active {
+          border: 0.063rem solid map-get($map: $input-header, $key: border-hover)
+      }       
+  }
+}
+@mixin isInputSectionActive {
+  @if (map-get($map: $input-section, $key: border-hover)) {
+      .input-section:active {
+          border: 0.063rem solid map-get($map: $input-section, $key: border-hover)
+      }       
+  }
+}
+@mixin isInputFooterActive {
+  @if (map-get($map: $input-footer, $key: border-hover)) {
+      .input-footer:active {
+          border: 0.063rem solid map-get($map: $input-footer, $key: border-hover)
+      }       
+  }
+}
+@mixin isInputHeaderHover {
+  @if (map-get($map: $input-header, $key: border-hover)) {
+      .input-header:hover {
+          border: 0.063rem solid map-get($map: $input-header, $key: border-hover)
+      }       
+  }
+}
+@mixin isInputSectionHover {
+  @if (map-get($map: $input-section, $key: border-hover)) {
+      .input-section:hover {
+          border: 0.063rem solid map-get($map: $input-section, $key: border-hover)
+      }       
+  }
+}
+@mixin isInputFooterHover {
+  @if (map-get($map: $input-footer, $key: border-hover)) {
+      .input-footer:hover {
+          border: 0.063rem solid map-get($map: $input-footer, $key: border-hover)
+      }       
+  }
+}
+
+/* INPUT CLASS */
+
+.form {
+  width: 100%;
+  height: 100%;
+}
+
+@include isInputHeader();
+@include isInputSection();
+@include isInputFooter();
+
+// * ICONS
+
+// * MIXIN ICONS
+
+@mixin isIconHeader($used : map-get($map: $icon-header, $key: used)) {
+  @if ($used == true) {
+      .icon-header {
+          @if (map-get($map: $icon-header, $key: margin) != none) {
+              margin: map-get($map: $icon-header, $key: margin);
+          }
+          @if (map-get($map: $icon-header, $key: size) != none) {
+              font-size: map-get($map: $icon-header, $key: size);
+          }
+          @if (map-get($map: $icon-header, $key: color) != none) {
+              color: map-get($map: $icon-header, $key: color);
+          }
+      }
+  }
+}
+@mixin isIconSection($used : map-get($map: $icon-section, $key: used)) {
+  @if ($used == true) {
+      .icon-section {
+          @if (map-get($map: $icon-section, $key: margin) != none) {
+              margin: map-get($map: $icon-section, $key: margin);
+          }
+          @if (map-get($map: $icon-section, $key: size) != none) {
+              font-size: map-get($map: $icon-section, $key: size);
+          }
+          @if (map-get($map: $icon-section, $key: color) != none) {
+              color: map-get($map: $icon-section, $key: color);
+          }
+      }
+  }
+}
+@mixin isIconFooter($used : map-get($map: $icon-footer, $key: used)) {
+  @if ($used == true) {
+      .icon-footer {
+          @if (map-get($map: $icon-footer, $key: margin) != none) {
+              margin: map-get($map: $icon-footer, $key: margin);
+          }
+          @if (map-get($map: $icon-footer, $key: size) != none) {
+              font-size: map-get($map: $icon-footer, $key: size);
+          }
+          @if (map-get($map: $icon-footer, $key: color) != none) {
+              color: map-get($map: $icon-footer, $key: color);
+          }
+      }
+  }
+}
+
+// * MIXIN ICONS ACTIVE AND HOVER
+
+@mixin isIconHeaderActive {
+  @if (map-get($map: $icon-header, $key: color-hover) != none) {
+      .icon-header:active {
+          color: map-get($map: $icon-header, $key: color-hover);
+      }
+  }
+}
+@mixin isIconHeaderHover {
+  @if (map-get($map: $icon-header, $key: color-hover) != none) {
+      .icon-header:hover {
+          color: map-get($map: $icon-header, $key: color-hover);
+      }
+  }
+}
+@mixin isIconSectionActive {
+  @if (map-get($map: $icon-section, $key: color-hover) != none) {
+      .icon-section:active {
+          color: map-get($map: $icon-section, $key: color-hover);
+      }
+  }
+}
+@mixin isIconSectionHover {
+  @if (map-get($map: $icon-section, $key: color-hover) != none) {
+      .icon-section:hover {
+          color: map-get($map: $icon-section, $key: color-hover);
+      }
+  }
+}
+@mixin isIconFooterActive {
+  @if (map-get($map: $icon-footer, $key: color-hover) != none) {
+      .icon-footer:active {
+          color: map-get($map: $icon-footer, $key: color-hover);
+      }
+  }
+}
+@mixin isIconFooterHover {
+  @if (map-get($map: $icon-footer, $key: color-hover) != none) {
+      .icon-footer:hover {
+          color: map-get($map: $icon-footer, $key: color-hover);
+      }
+  }
+}
+
+/* ICONS CLASS */
+
+@include isIconHeader();
+@include isIconSection();
+@include isIconFooter();
+
+
+// * MIXINS SPACING
+
+@mixin isPadding-0($used : nth($list: $padding-0, $n: 1)) {
+  @if ($used == true) {
+      .padding-0 {
+          padding: nth($list: $padding-0, $n: 2);
+      }
+  }
+}
+@mixin isPadding-8($used : nth($list: $padding-8, $n: 1)) {
+  @if ($used == true) {
+      .padding-8 {
+          padding: nth($list: $padding-8, $n: 2);
+      }
+  }
+}
+@mixin isPadding-16($used : nth($list: $padding-16, $n: 1)) {
+  @if ($used == true) {
+      .padding-16 {
+          padding: nth($list: $padding-16, $n: 2);
+      }
+  }
+}
+@mixin isPadding-32($used : nth($list: $padding-32, $n: 1)) {
+  @if ($used == true) {
+      .padding-32 {
+          padding: nth($list: $padding-32, $n: 2);
+      }
+  }
+}
+@mixin isPadding-64($used : nth($list: $padding-64, $n: 1)) {
+  @if ($used == true) {
+      .padding-64 {
+          padding: nth($list: $padding-64, $n: 2);
+      }
+  }
+}
+@mixin isPadding-96($used : nth($list: $padding-96, $n: 1)) {
+  @if ($used == true) {
+      .padding-96 {
+          padding: nth($list: $padding-96, $n: 2);
+      }
+  }
+}
+@mixin isPaddingY-16($used : nth($list: $paddingY-16, $n: 1)) {
+  @if ($used == true) {
+      .paddingY-16 {
+          padding: nth($list: $paddingY-16, $n: 2);
+      }
+  }
+}
+@mixin isPaddingY-32($used : nth($list: $paddingY-32, $n: 1)) {
+  @if ($used == true) {
+      .paddingY-32 {
+          padding: nth($list: $paddingY-32, $n: 2);
+      }
+  }
+}
+@mixin isPaddingY-64($used : nth($list: $paddingY-64, $n: 1)) {
+  @if ($used == true) {
+      .paddingY-64 {
+          padding: nth($list: $paddingY-64, $n: 2);
+      }
+  }
+}
+@mixin isPaddingY-96($used : nth($list: $paddingY-96, $n: 1)) {
+  @if ($used == true) {
+      .paddingY-96 {
+          padding: nth($list: $paddingY-96, $n: 2);
+      }
+  }
+}
+@mixin isPaddingX-16($used : nth($list: $paddingX-16, $n: 1)) {
+  @if ($used == true) {
+      .paddingX-16 {
+          padding: nth($list: $paddingX-16, $n: 2);
+      }
+  }
+}
+@mixin isPaddingX-32($used : nth($list: $paddingX-32, $n: 1)) {
+  @if ($used == true) {
+      .paddingX-32 {
+          padding: nth($list: $paddingX-32, $n: 2);
+      }
+  }
+}
+@mixin isPaddingX-64($used : nth($list: $paddingX-64, $n: 1)) {
+  @if ($used == true) {
+      .paddingX-64 {
+          padding: nth($list: $paddingX-64, $n: 2);
+      }
+  }
+}
+@mixin isPaddingX-96($used : nth($list: $paddingX-96, $n: 1)) {
+  @if ($used == true) {
+      .paddingX-96 {
+          padding: nth($list: $paddingX-96, $n: 2);
+      }
+  }
+}
+@mixin isMargin-0($used : nth($list: $margin-0, $n: 1)) {
+  @if ($used == true) {
+      .margin-0 {
+          margin: nth($list: $margin-0, $n: 2);
+      }
+  }
+}
+@mixin isMarginBottom-8($used : nth($list: $marginB-8, $n: 1)) {
+  @if ($used == true) {
+      .marginB-8 {
+          margin: nth($list: $marginB-8, $n: 2);
+      }
+  }
+}
+@mixin isMarginBottom-16($used : nth($list: $marginB-16, $n: 1)) {
+  @if ($used == true) {
+      .marginB-16 {
+          margin: nth($list: $marginB-16, $n: 2);
+      }
+  }
+}
+@mixin isMarginBottom-24($used : nth($list: $marginB-24, $n: 1)) {
+  @if ($used == true) {
+      .marginB-24 {
+          margin: nth($list: $marginB-24, $n: 2);
+      }
+  }
+}
+@mixin isMarginBottom-32($used : nth($list: $marginB-32, $n: 1)) {
+  @if ($used == true) {
+      .marginB-32 {
+          margin: nth($list: $marginB-32, $n: 2);
+      }
+  }
+}
+@mixin isMarginBottom-64($used : nth($list: $marginB-64, $n: 1)) {
+  @if ($used == true) {
+      .marginB-64 {
+          margin: nth($list: $marginB-64, $n: 2);
+      }
+  }
+}
+
+/* SPACING BOX CLASS */
+
+@include isPadding-0();
+@include isPadding-8();
+@include isPadding-16();
+@include isPadding-32();
+@include isPadding-64();
+@include isPadding-96();
+@include isPaddingY-16();
+@include isPaddingY-32();
+@include isPaddingY-64();
+@include isPaddingY-96();
+@include isPaddingX-16();
+@include isPaddingX-32();
+@include isPaddingX-64();
+@include isPaddingX-96();
+@include isMargin-0();
+@include isMarginBottom-16();
+@include isMarginBottom-24();
+@include isMarginBottom-32();
+@include isMarginBottom-64();
+
+
+@import "backgrounds";

@@ -1,0 +1,52 @@
+// * CONFIGURATION OF CONTAINER
+$width-container: (
+  "sm": 34rem,
+  "md": 40.25rem,
+  "lg": 46.5rem,
+  "xl": 52.75rem,
+  "xxl": 59rem,
+);
+
+/* CONTAINERS */
+.header,
+.nav,
+.section,
+.footer,
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 0.75rem;
+    z-index: 500;
+}
+
+.header {
+  background-color: map-get($map: $header, $key: bg);
+  background-image: map-get($map: $header, $key: bg-image) no-repeat center;
+  background-size: cover;
+}
+
+.nav {
+  background-color: map-get($map: $navbar, $key: bg);
+  .container {
+    padding:  map-get($map: $navbar, $key: padding);
+  }
+}
+
+header > .container {
+  min-height: map-get($map: $header, $key: height-container);
+  max-height: 100%;
+}
+
+.container {
+    padding: 4rem 0;
+    margin: 0 auto;
+}
+
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+
